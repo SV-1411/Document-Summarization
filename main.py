@@ -1,4 +1,5 @@
 import os
+import argparse
 from src.text_extraction import extract_text_from_file
 from src.text_processing import process_text
 from src.summarization import summarize_text
@@ -24,7 +25,12 @@ def summarize_documents_in_folder(folder_path):
     return summaries
 
 if __name__ == "__main__":
-    folder_path = "path/to/your/folder"
+    # Set up argparse to accept folder path from the command line
+    parser = argparse.ArgumentParser(description="Summarize documents in a folder.")
+    parser.add_argument("folder_path", help="Path to the folder containing documents")
+    args = parser.parse_args()
+    
+    folder_path = args.folder_path
     summaries = summarize_documents_in_folder(folder_path)
     for filename, summary in summaries.items():
         print(f"Summary for {filename}: {summary}")
