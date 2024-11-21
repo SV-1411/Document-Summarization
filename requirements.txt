@@ -1,1 +1,7 @@
-pip install -r requirements.txt
+nltk==3.8.1
+python-docx==0.8.11
+pdfminer.six==20221105
+pytesseract==0.3.10
+Pillow==9.4.0
+chardet==5.1.0
+transformers==4.33.2
